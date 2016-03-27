@@ -69,6 +69,14 @@ And which is worked upon by one of the converters, eg:
     }
 ```
 
+Reverse Binding (that is, the references that are made to the ScvrollView's ScrollY property are made by setting the BindingContext of these elements to the name of the ScrollView itself:
+
+```
+BindingContext="{x:Reference Name=MaskScrollView}"
+```
+
+In this way, the Opacity of the fading elements can be set to the ScrollView's ScrollY property, and this value returned by the converter to be between 0 and 1.
+
 Of course, some might like the Hero Image to not fade out in such a case, however what is plain from the Xaml is that this sort of thing is very easy to do / change / modify - and it's also a great illustration of reverse binding.
 
 The following four images show the action of scrolling, notice that once the scroll-pane comes to it's top position, that the page within it continues to scroll upwards.
