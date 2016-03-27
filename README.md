@@ -19,7 +19,7 @@ Notice the BoxView, which is transparent - this affords the underlying hero imag
         <BoxView HeightRequest="{StaticResource HeroHeightKey}" Color="Transparent" />
 ```
 
-Notice, in particular, the HeroHeightKey that is used as the BoxView's HeightRequest - this value is needed by a few ui elements to coordinate the visual effect, hence this key exists for each of the coordinating ui elements to reference in the page's ResourceDictionary:
+Notice, in particular, the HeroHeightKey that is used as the BoxView's HeightRequest - this value is needed by a few ui elements to coordinate the visual effect, hence this key exists for each of the coordinating ui elements to reference in the page's ResourceDictionary ... just change the value of this key and the height of the transparent BoxView is changed, and all of the coordinating elements follow suit:
 
 ```
     <ResourceDictionary>
