@@ -12,7 +12,7 @@
   <ContentPage.Padding>
     <OnPlatform x:TypeArguments="Thickness" iOS="0, 20, 0, 0" WinPhone="20,20,20,20" />
   </ContentPage.Padding>
-  <Grid Grid.RowSpacing="0" BackgroundColor="Aqua">
+  <Grid Grid.RowSpacing="0" BackgroundColor="#58D3F7">
     <Grid.RowDefinitions>
       <RowDefinition Height="50" />
       <RowDefinition Height="30" />
@@ -21,35 +21,31 @@
       <RowDefinition Height="*" />
       <RowDefinition Height="Auto" />
     </Grid.RowDefinitions>
-    <StackLayout Grid.Row="0" BackgroundColor="Aqua">
+    <Image 
+                  Grid.Row="0" Grid.RowSpan="4" Source="oak~universal.png" Aspect="AspectFill"  
+                  BindingContext="{x:Reference Name=MaskScrollView}"
+                  Opacity="{Binding ScrollY, 
+                    Converter={StaticResource ScrollViewingOpacityConverter},
+                    ConverterParameter=275
+                    }"  
+                    />
+    <StackLayout Grid.Row="0" BackgroundColor="Transparent">
       <BoxView HeightRequest="10" Color="Transparent" />
-      <Label Text="Diminishing Masthead" FontAttributes="Bold" TextColor="White" HorizontalOptions="Center" />
+      <Label Text="Fading Hero" FontAttributes="Bold" TextColor="White" HorizontalOptions="Center" />
       <Label Text="Proof of Concept" FontAttributes="Bold" TextColor="White" HorizontalOptions="Center"
                   BindingContext="{x:Reference Name=MaskScrollView}"
                     Opacity="{Binding ScrollY, 
                   Converter={StaticResource ScrollViewingOpacityConverter},
-                  ConverterParameter=150
+                  ConverterParameter=275
                   }"         
     />
     </StackLayout>
-    <Grid Grid.Row="1" Grid.RowSpan="2" BackgroundColor="Transparent">
-      <BoxView 
-                BindingContext="{x:Reference Name=MaskScrollView}"
-                Opacity="{Binding ScrollY, 
-                  Converter={StaticResource ScrollViewingOpacityConverter},
-                  ConverterParameter=150
-                  }"
-                Color="Green" 
-                HorizontalOptions="Center" 
-                VerticalOptions="Center" 
-                HeightRequest="80" 
-                WidthRequest="80" />  
-    </Grid>
     <ScrollView x:Name="MaskScrollView" Grid.Row="1" Grid.RowSpan="4">
       <StackLayout StackLayout.Spacing="0">
-        <BoxView HeightRequest="150" Color="Transparent" />
-        <BoxView HeightRequest="30" BackgroundColor="Yellow" />
-        <StackLayout BackgroundColor="White" StackLayout.Spacing="15" Padding="10">
+        <BoxView HeightRequest="275" Color="Transparent" />
+        <!--<BoxView HeightRequest="30" BackgroundColor="Yellow" />-->
+        <Image Source="TransparentScrollViewLip~universal@1x.png.png" Aspect="Fill" HorizontalOptions="StartAndExpand" HeightRequest="30" />
+        <StackLayout BackgroundColor="#0085c3" StackLayout.Spacing="15" Padding="10">
           <Label>
             <Label.FormattedText>
               <FormattedString>
@@ -119,13 +115,21 @@
         </StackLayout>
       </StackLayout>
     </ScrollView>
-    <BoxView
+    <!--<BoxView
       BindingContext="{x:Reference Name=MaskScrollView}"
       Grid.Row="1" HeightRequest="30" BackgroundColor="Yellow" 
       IsVisible="{Binding ScrollY, 
                   Converter={StaticResource MaskConverter},
-                  ConverterParameter=150}" Opacity="1" />
-    <Grid Grid.Row="5" BackgroundColor="Aqua" Padding="0" Grid.ColumnSpacing="0">
+                  ConverterParameter=275}" Opacity="1" />-->
+    <Image 
+      BindingContext="{x:Reference Name=MaskScrollView}"
+      Grid.Row="1" 
+      Source="SolidScrollViewLip~universal@1x.png.png" Aspect="Fill" HorizontalOptions="StartAndExpand" HeightRequest="30"
+      IsVisible="{Binding ScrollY, 
+                 Converter={StaticResource MaskConverter},
+                 ConverterParameter=275}" Opacity="1"
+             />
+    <Grid Grid.Row="5" BackgroundColor="#0085c3" Padding="0" Grid.ColumnSpacing="0">
       <Grid.ColumnDefinitions>
         <ColumnDefinition Width="5" />
         <ColumnDefinition Width="*" />
