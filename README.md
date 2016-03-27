@@ -79,7 +79,7 @@ And which is worked upon by one of the converters, eg:
     }
 ```
 
-Reverse Binding (that is, the references that are made to the ScvrollView's ScrollY property) is made possible by setting the BindingContext of each of these elements to the name of the ScrollView itself:
+Reverse Binding (that is, the references that are made to the ScrollView's ScrollY property) is made possible by setting the BindingContext of each of these elements to the name of the ScrollView itself:
 
 ```
 BindingContext="{x:Reference Name=MaskScrollView}"
