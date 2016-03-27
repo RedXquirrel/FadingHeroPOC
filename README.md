@@ -25,6 +25,9 @@ You will also notice that under thge BoxView is an image that has a transparent 
 <Image Source="transparentscrollviewlip.png" ...
 ```
 
+The ScrollView 'lip' image itself looks like this (one of thew iOS ones, in this case):
+
+![ScrollView Lip](https://raw.githubusercontent.com/Xamtastic/FadingHeroPOC/master/POC/POC.iOS/Resources/transparentscrollviewlip%403x.png)
 
 Notice, in particular, the HeroHeightKey that is used as the BoxView's HeightRequest - this value is needed by a few ui elements to coordinate the visual effect, hence this key exists for each of the coordinating ui elements to reference in the page's ResourceDictionary ... just change the value of this key and the height of the transparent BoxView is changed, and all of the coordinating elements follow suit:
 
