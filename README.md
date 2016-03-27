@@ -3,7 +3,7 @@ In this Proof-of-Concept, scrolling the ScrollView reduces the height of the her
 
 Done in Xaml with two IValueConverters to manage opacity and hero height changes as bound to the ScrollY value of the ScrollView.
 
-It all starts with a ScrollView, vis-a-vis:
+###### It all starts with a ScrollView, vis-a-vis:
 
 ```
     <ScrollView x:Name="MaskScrollView" Grid.Row="1" Grid.RowSpan="4">
