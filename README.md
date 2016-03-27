@@ -155,6 +155,8 @@ Notice also that the BoxView and the Image have exactly the same Grid.Row positi
 
 The purpose of the BoxView is to be underneath the stationary 'lip' image, but to provide a background colour beneath the transparency of the image, that is exactly the same colour as the closed view background. Without this BoxView, you would see the items in the ScrollView scrolling upwards beneath it!
 
+And that forms the basis of that illustrated!
+
 ###### Quod erat faciendum.
 
 Of course, some might like the Hero Image to not fade out in such a case, however what is plain from the Xaml is that this sort of thing is very easy to do / change / modify - and it's also a great illustration of reverse binding.
