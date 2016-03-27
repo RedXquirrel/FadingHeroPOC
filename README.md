@@ -3,7 +3,23 @@ Scrolling the ScrollView reduces the height of the hero pane, as well as fading 
 
 Done in Xaml with two IValueConverters to manage opacity and hero height changes as bound to the ScrollY value of the ScrollView.
 
-Notice, in particular, the HeroHeightKey in the page's ResourceDictionary:
+It all starts with a ScrollView, vis-a-vis:
+
+```
+    <ScrollView x:Name="MaskScrollView" Grid.Row="1" Grid.RowSpan="4">
+      <StackLayout StackLayout.Spacing="0">
+        <BoxView HeightRequest="{StaticResource HeroHeightKey}" Color="Transparent" />
+        <Image Source="transparentscrollviewlip.png" Aspect="Fill" HorizontalOptions="StartAndExpand" HeightRequest="30" />
+        ...
+```
+
+Notice the BoxView, which is transparent - this affords the underlying hero image to be seen!
+
+```
+        <BoxView HeightRequest="{StaticResource HeroHeightKey}" Color="Transparent" />
+```
+
+Notice, in particular, the HeroHeightKey that is used as the BoxView's HeightRequest - this value is needed by a few ui elements to coordinate the visual effect, hence this key exists for each of the coordinating ui elements to reference in the page's ResourceDictionary:
 
 ```
     <ResourceDictionary>
