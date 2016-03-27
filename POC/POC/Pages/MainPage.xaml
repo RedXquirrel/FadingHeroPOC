@@ -5,18 +5,25 @@
              x:Class="POC.Pages.MainPage">
   <ContentPage.Resources>
     <ResourceDictionary>
-
+      
       <x:Double x:Key="HeroHeightKey">275</x:Double>
+      <Color x:Key="OpenedHeroTitleTextColorKey">White</Color>
+      <Color x:Key="ClosedHeroTitleTextColorKey">Black</Color>
+      <Color x:Key="HeroBackgroundColorKey">White</Color>
+      
+      <Color x:Key="LowerBodyBackgroundColorKey">#0085c3</Color>
+      <Color x:Key="ButtonBackgroundColorKey">Silver</Color>
       
       <converters:MaskConverter x:Key="MaskConverter" />
       <converters:ScrollViewingFadingOpacityConverter x:Key="ScrollViewingFadingOpacityConverter" />
-    <converters:ScrollViewingUnfadingOpacityConverter x:Key="ScrollViewingUnfadingOpacityConverter" />
+      <converters:ScrollViewingUnfadingOpacityConverter x:Key="ScrollViewingUnfadingOpacityConverter" />
+    
     </ResourceDictionary>
   </ContentPage.Resources>
   <ContentPage.Padding>
     <OnPlatform x:TypeArguments="Thickness" iOS="0, 20, 0, 0" WinPhone="20,20,20,20" />
   </ContentPage.Padding>
-  <Grid Grid.RowSpacing="0" BackgroundColor="White">
+  <Grid Grid.RowSpacing="0" BackgroundColor="{StaticResource HeroBackgroundColorKey}">
     <Grid.RowDefinitions>
       <RowDefinition Height="50" />
       <RowDefinition Height="30" />
@@ -41,7 +48,7 @@
               }"            
       >
       <BoxView HeightRequest="10" Color="Transparent" />
-      <Label Text="Fading Hero" FontAttributes="Bold" TextColor="Black" HorizontalOptions="Center" />
+      <Label Text="Fading Hero" FontAttributes="Bold" TextColor="{StaticResource ClosedHeroTitleTextColorKey}" HorizontalOptions="Center" />
       <Label IsVisible="False" Text="Proof of Concept" FontAttributes="Bold" TextColor="Black" HorizontalOptions="Center"
       />
     </StackLayout>    
@@ -53,15 +60,15 @@
               }"            
       >
       <BoxView HeightRequest="10" Color="Transparent" />
-      <Label Text="FADING HERO" FontAttributes="Bold" TextColor="White" HorizontalOptions="Center" />
-      <Label Text="Proof of Concept" FontAttributes="Bold" TextColor="White" HorizontalOptions="Center"
+      <Label Text="FADING HERO" FontAttributes="Bold" TextColor="{StaticResource OpenedHeroTitleTextColorKey}" HorizontalOptions="Center" />
+      <Label Text="Proof of Concept" FontAttributes="Bold" TextColor="{StaticResource OpenedHeroTitleTextColorKey}" HorizontalOptions="Center"
     />
     </StackLayout>
     <ScrollView x:Name="MaskScrollView" Grid.Row="1" Grid.RowSpan="4">
       <StackLayout StackLayout.Spacing="0">
         <BoxView HeightRequest="{StaticResource HeroHeightKey}" Color="Transparent" />
         <Image Source="transparentscrollviewlip.png" Aspect="Fill" HorizontalOptions="StartAndExpand" HeightRequest="30" />
-        <StackLayout BackgroundColor="#0085c3" StackLayout.Spacing="15" Padding="10">
+        <StackLayout BackgroundColor="{StaticResource LowerBodyBackgroundColorKey}" StackLayout.Spacing="15" Padding="10">
           <Label>
             <Label.FormattedText>
               <FormattedString>
@@ -133,7 +140,7 @@
     </ScrollView>
      <BoxView 
         BindingContext="{x:Reference Name=MaskScrollView}"
-        Grid.Row="1" HeightRequest="30" Color="White"
+        Grid.Row="1" HeightRequest="30" Color="{StaticResource HeroBackgroundColorKey}"
         IsVisible="{Binding ScrollY, 
           Converter={StaticResource MaskConverter},
           ConverterParameter={StaticResource HeroHeightKey}}" Opacity="1"
@@ -146,7 +153,7 @@
                  Converter={StaticResource MaskConverter},
                  ConverterParameter={StaticResource HeroHeightKey}}" Opacity="1"
              />
-    <Grid Grid.Row="5" BackgroundColor="#0085c3" Padding="0" Grid.ColumnSpacing="0">
+    <Grid Grid.Row="5" BackgroundColor="{StaticResource LowerBodyBackgroundColorKey}" Padding="0" Grid.ColumnSpacing="0">
       <Grid.ColumnDefinitions>
         <ColumnDefinition Width="5" />
         <ColumnDefinition Width="*" />
@@ -159,8 +166,8 @@
         <RowDefinition Height="Auto" />
         <RowDefinition Height="2" />
       </Grid.RowDefinitions>
-      <Button Grid.Row="1" Grid.Column="1" Text="Lorem" HorizontalOptions="FillAndExpand" BackgroundColor="Silver" BorderRadius="0" />
-      <Button Grid.Row="1" Grid.Column="3" Text="Ipsum" HorizontalOptions="FillAndExpand" BackgroundColor="Silver" BorderRadius="0" />
+      <Button Grid.Row="1" Grid.Column="1" Text="Lorem" HorizontalOptions="FillAndExpand" BackgroundColor="{StaticResource ButtonBackgroundColorKey}" BorderRadius="0" />
+      <Button Grid.Row="1" Grid.Column="3" Text="Ipsum" HorizontalOptions="FillAndExpand" BackgroundColor="{StaticResource ButtonBackgroundColorKey}" BorderRadius="0" />
     </Grid>
   </Grid>
 </ContentPage>
