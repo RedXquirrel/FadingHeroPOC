@@ -11,8 +11,10 @@ Notice, in particular, the HeroHeightKey in the page's ResourceDictionary:
       <x:Double x:Key="HeroHeightKey">275</x:Double>
       
       <converters:MaskConverter x:Key="MaskConverter" />
+      
       <converters:ScrollViewingFadingOpacityConverter x:Key="ScrollViewingFadingOpacityConverter" />
       <converters:ScrollViewingUnfadingOpacityConverter x:Key="ScrollViewingUnfadingOpacityConverter" />
+      
     </ResourceDictionary>
 ```
 
