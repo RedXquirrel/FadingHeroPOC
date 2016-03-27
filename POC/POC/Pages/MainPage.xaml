@@ -23,7 +23,7 @@
       <RowDefinition Height="Auto" />
     </Grid.RowDefinitions>
     <Image 
-                  Grid.Row="0" Grid.RowSpan="4" Source="oak~universal.png" Aspect="AspectFill"  
+                  Grid.Row="0" Grid.RowSpan="4" Source="oak.png" Aspect="AspectFill"  
                   BindingContext="{x:Reference Name=MaskScrollView}"
                   Opacity="{Binding ScrollY, 
                     Converter={StaticResource ScrollViewingFadingOpacityConverter},
@@ -50,15 +50,14 @@
               }"            
       >
       <BoxView HeightRequest="10" Color="Transparent" />
-      <Label Text="Fading Hero" FontAttributes="Bold" TextColor="White" HorizontalOptions="Center" />
+      <Label Text="FADING HERO" FontAttributes="Bold" TextColor="White" HorizontalOptions="Center" />
       <Label Text="Proof of Concept" FontAttributes="Bold" TextColor="White" HorizontalOptions="Center"
     />
     </StackLayout>
     <ScrollView x:Name="MaskScrollView" Grid.Row="1" Grid.RowSpan="4">
       <StackLayout StackLayout.Spacing="0">
         <BoxView HeightRequest="275" Color="Transparent" />
-        <!--<BoxView HeightRequest="30" BackgroundColor="Yellow" />-->
-        <Image Source="TransparentScrollViewLip~universal@1x.png.png" Aspect="Fill" HorizontalOptions="StartAndExpand" HeightRequest="30" />
+        <Image Source="transparentscrollviewlip.png" Aspect="Fill" HorizontalOptions="StartAndExpand" HeightRequest="30" />
         <StackLayout BackgroundColor="#0085c3" StackLayout.Spacing="15" Padding="10">
           <Label>
             <Label.FormattedText>
@@ -129,12 +128,6 @@
         </StackLayout>
       </StackLayout>
     </ScrollView>
-    <!--<BoxView
-      BindingContext="{x:Reference Name=MaskScrollView}"
-      Grid.Row="1" HeightRequest="30" BackgroundColor="Yellow" 
-      IsVisible="{Binding ScrollY, 
-                  Converter={StaticResource MaskConverter},
-                  ConverterParameter=275}" Opacity="1" />-->
      <BoxView 
         BindingContext="{x:Reference Name=MaskScrollView}"
         Grid.Row="1" HeightRequest="30" Color="White"
@@ -145,7 +138,7 @@
       <Image 
         BindingContext="{x:Reference Name=MaskScrollView}"
         Grid.Row="1" 
-        Source="TransparentScrollViewLip~universal@1x.png.png" Aspect="Fill" HorizontalOptions="StartAndExpand" HeightRequest="30"
+        Source="transparentscrollviewlip.png" Aspect="Fill" HorizontalOptions="StartAndExpand" HeightRequest="30"
         IsVisible="{Binding ScrollY, 
                  Converter={StaticResource MaskConverter},
                  ConverterParameter=275}" Opacity="1"

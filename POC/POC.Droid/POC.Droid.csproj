@@ -107,13 +107,22 @@
     <None Include="Assets\AboutAssets.txt" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\icon.png" />
     <AndroidResource Include="Resources\drawable-hdpi\icon.png" />
     <AndroidResource Include="Resources\drawable-xhdpi\icon.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\icon.png" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Properties\AndroidManifest.xml" />
+    <AndroidResource Include="Resources\drawable-hdpi\transparentscrollviewlip.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\transparentscrollviewlip.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\transparentscrollviewlip.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\transparentscrollviewlip.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\transparentscrollviewlip.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\oak.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\oak.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\oak.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\oak.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\oak.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\POC\POC.csproj">
