@@ -12,7 +12,7 @@
   <ContentPage.Padding>
     <OnPlatform x:TypeArguments="Thickness" iOS="0, 20, 0, 0" WinPhone="20,20,20,20" />
   </ContentPage.Padding>
-  <Grid Grid.RowSpacing="0" BackgroundColor="#58D3F7">
+  <Grid Grid.RowSpacing="0" BackgroundColor="White">
     <Grid.RowDefinitions>
       <RowDefinition Height="50" />
       <RowDefinition Height="30" />
@@ -121,11 +121,18 @@
       IsVisible="{Binding ScrollY, 
                   Converter={StaticResource MaskConverter},
                   ConverterParameter=275}" Opacity="1" />-->
-    <Image 
-      BindingContext="{x:Reference Name=MaskScrollView}"
-      Grid.Row="1" 
-      Source="SolidScrollViewLip~universal@1x.png.png" Aspect="Fill" HorizontalOptions="StartAndExpand" HeightRequest="30"
-      IsVisible="{Binding ScrollY, 
+     <BoxView 
+        BindingContext="{x:Reference Name=MaskScrollView}"
+        Grid.Row="1" HeightRequest="30" Color="White"
+        IsVisible="{Binding ScrollY, 
+          Converter={StaticResource MaskConverter},
+          ConverterParameter=275}" Opacity="1"
+         />
+      <Image 
+        BindingContext="{x:Reference Name=MaskScrollView}"
+        Grid.Row="1" 
+        Source="TransparentScrollViewLip~universal@1x.png.png" Aspect="Fill" HorizontalOptions="StartAndExpand" HeightRequest="30"
+        IsVisible="{Binding ScrollY, 
                  Converter={StaticResource MaskConverter},
                  ConverterParameter=275}" Opacity="1"
              />
