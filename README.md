@@ -106,6 +106,13 @@ Where you have already seen the one in the ScrollView that moves upwards and dow
 Conversely, the 'stationary' lip becomes invisible when the scrollview scrolls the other way and the 'lip' image in the scrollview suddenly becomes visible:
 
 ```
+     <BoxView 
+        BindingContext="{x:Reference Name=MaskScrollView}"
+        Grid.Row="1" HeightRequest="30" Color="White"
+        IsVisible="{Binding ScrollY, 
+          Converter={StaticResource MaskConverter},
+          ConverterParameter={StaticResource HeroHeightKey}}" Opacity="1"
+         />
       <Image 
         BindingContext="{x:Reference Name=MaskScrollView}"
         Grid.Row="1" 
@@ -115,6 +122,10 @@ Conversely, the 'stationary' lip becomes invisible when the scrollview scrolls t
                  ConverterParameter={StaticResource HeroHeightKey}}" Opacity="1"
              />
 ```
+
+Notice here that the BoxView and the Image have exactly the same Grid.Row positioning, the same HeightRequest, and the same IsVisible action upon it according to where the scrollview is positioned.
+
+The purpose of the BoxView is to be underneath the stationary 'lip' image, but to provide a background colour beneath the transparency of the image, that is exactly the same colour as the closed view background. Without this BoxView, you would see the items in the ScrollView scrolling upwards beneath it!
 
 Quod erat faciendum.
 
