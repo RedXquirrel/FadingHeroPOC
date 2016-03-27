@@ -85,7 +85,19 @@ Reverse Binding (that is, the references that are made to the ScrollView's Scrol
 BindingContext="{x:Reference Name=MaskScrollView}"
 ```
 
-In this way, the Opacity of the fading elements can be set to the ScrollView's ScrollY property, and this value returned by the converter to be between 0 and 1.
+In this way, the Opacity of the fading elements can be set to the ScrollView's ScrollY property, and this value is returned by the converter to be between 0 and 1, vis-a-vis:
+
+```
+        public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
+        {
+            double input = System.Convert.ToDouble(value);
+            double scale = System.Convert.ToDouble(parameter);
+
+            double result = (scale - input) / scale; // i.e. betwen 0 and 1
+
+            return result;
+        }
+```
 
 Of course, some might like the Hero Image to not fade out in such a case, however what is plain from the Xaml is that this sort of thing is very easy to do / change / modify - and it's also a great illustration of reverse binding.
 
