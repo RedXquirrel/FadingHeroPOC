@@ -19,7 +19,7 @@ Notice the BoxView, which is transparent - this affords the underlying hero imag
         <BoxView HeightRequest="{StaticResource HeroHeightKey}" Color="Transparent" />
 ```
 
-You will also notice that below the transparent BoxView is an image that has a transparent top, this is the 'lip' of the elements that scroll upwards, and the reason why this image has a transparency at the top (diagnol, in this case), is to give a cue to the user when it is closed, that they should swipe doen to reveal the hidden content.
+You will also notice that below the transparent BoxView is an image that has a transparent top, this is the 'lip' of the elements that scroll upwards, and the reason why this image has a transparency at the top (diagnol, in this case), is to give a cue to the user when it is closed, that they should swipe down to reveal the hidden content.
 
 ```
 <Image Source="transparentscrollviewlip.png" ...
