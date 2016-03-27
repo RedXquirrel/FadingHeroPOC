@@ -44,7 +44,7 @@ Notice, in particular, the HeroHeightKey that is used as the BoxView's HeightReq
     </ResourceDictionary>
 ```
 
-This is used in many places that reference the ScrollY value of the ScrollView, and here you can see the value passing through to the IValueConverter that is used by the Hero image to fade:
+The HeroHeightKey is used in many places that reference the ScrollY value of the ScrollView, and here you can see the value passing through to the IValueConverter that is used by the Hero image to fade:
 
 ```
     <Image 
