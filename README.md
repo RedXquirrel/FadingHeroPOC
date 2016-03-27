@@ -21,7 +21,7 @@ So, where FIRST was the ScrollView, SECOND is the BoxView:
         <BoxView HeightRequest="{StaticResource HeroHeightKey}" Color="Transparent" />
 ```
 
-... and THIRD is the scrollview 'lip' image, whose purpose is to give a cue to the user when the Hero image is in it's 'closed' state, it is closed, that they should swipe down to 'open' the hero image and in so doing, reveal it's hidden content.
+... and THIRD is the scrollview 'lip' image, whose purpose is to give a cue to the user when the Hero image is in it's 'closed' state,  that they should swipe down to 'open' the hero image and in so doing, reveal it's hidden content.
 
 ```
 <Image Source="transparentscrollviewlip.png" ...
