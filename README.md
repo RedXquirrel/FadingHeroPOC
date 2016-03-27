@@ -13,13 +13,15 @@ Done in Xaml with two IValueConverters to manage opacity and hero height changes
         ...
 ```
 
-Notice the BoxView, which is transparent - this affords the underlying hero image to be seen!
+The StackLayout in the ScrollView holds the 'scrolling pane' of the ScrollView that the user gestures upwards and downwards ... but notice that the first BoxView in the 'scroll-pane' is transparent - this affords the underlying hero image to be seen, and so assures a 'space' below where the first scrolling content is seen to start. In this case, the first thing that scrolls, is the scrolling 'lip' image, which is followed by content.
+
+So, where FIRST was the ScrollView, SECOND is the BoxView:
 
 ```
         <BoxView HeightRequest="{StaticResource HeroHeightKey}" Color="Transparent" />
 ```
 
-You will also notice that below the transparent BoxView is an image that has a transparent top, this is the 'lip' of the elements that scroll upwards, and the reason why this image has a transparency at the top (diagnol, in this case), is to give a cue to the user when it is closed, that they should swipe down to reveal the hidden content.
+... and THIRD is the scrollview 'lip' image, whose purpose is to give a cue to the user when the Hero image is in it's 'closed' state, it is closed, that they should swipe down to 'open' the hero image and in so doing, reveal it's hidden content.
 
 ```
 <Image Source="transparentscrollviewlip.png" ...
