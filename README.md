@@ -16,6 +16,19 @@ Notice, in particular, the HeroHeightKey in the page's ResourceDictionary:
     </ResourceDictionary>
 ```
 
+This is used in many places that reference the ScrollY value of the ScrollView, eg:
+
+```
+    <Image 
+                  Grid.Row="0" Grid.RowSpan="4" Source="oak.png" Aspect="AspectFill"  
+                  BindingContext="{x:Reference Name=MaskScrollView}"
+                  Opacity="{Binding ScrollY, 
+                    Converter={StaticResource ScrollViewingFadingOpacityConverter},
+                    ConverterParameter={StaticResource HeroHeightKey}
+                    }"  
+                    />
+```
+
 Of course, some might like the Hero Image to not fade out in such a case, however what is plain from the Xaml is that this sort of thing is very easy to do / change / modify - and it's also a great illustration of reverse binding.
 
 The following four images show the action of scrolling, notice that once the scroll-pane comes to it's top position, that the page within it continues to scroll upwards.
