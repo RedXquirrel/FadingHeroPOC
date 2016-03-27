@@ -93,7 +93,7 @@ In this way, the Opacity of the fading elements can be set to the ScrollView's S
             double input = System.Convert.ToDouble(value);
             double scale = System.Convert.ToDouble(parameter);
 
-            double result = (scale - input) / scale; // i.e. betwen 0 and 1
+            double result = (scale - input) / scale; // i.e. between 0 and 1
 
             return result;
         }
