@@ -38,7 +38,8 @@
   <ItemGroup>
     <Compile Include="App.cs" />
     <Compile Include="Converters\MaskConverter.cs" />
-    <Compile Include="Converters\ScrollViewingOpacityConverter.cs" />
+    <Compile Include="Converters\ScrollViewingUnfadingOpacityConverter.cs" />
+    <Compile Include="Converters\ScrollViewingFadingOpacityConverter.cs" />
     <Compile Include="Pages\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>

@@ -6,7 +6,8 @@
   <ContentPage.Resources>
     <ResourceDictionary>
       <converters:MaskConverter x:Key="MaskConverter" />
-      <converters:ScrollViewingOpacityConverter x:Key="ScrollViewingOpacityConverter" />
+      <converters:ScrollViewingFadingOpacityConverter x:Key="ScrollViewingFadingOpacityConverter" />
+    <converters:ScrollViewingUnfadingOpacityConverter x:Key="ScrollViewingUnfadingOpacityConverter" />
     </ResourceDictionary>
   </ContentPage.Resources>
   <ContentPage.Padding>
@@ -25,19 +26,32 @@
                   Grid.Row="0" Grid.RowSpan="4" Source="oak~universal.png" Aspect="AspectFill"  
                   BindingContext="{x:Reference Name=MaskScrollView}"
                   Opacity="{Binding ScrollY, 
-                    Converter={StaticResource ScrollViewingOpacityConverter},
+                    Converter={StaticResource ScrollViewingFadingOpacityConverter},
                     ConverterParameter=275
                     }"  
                     />
-    <StackLayout Grid.Row="0" BackgroundColor="Transparent">
+    <StackLayout Grid.Row="0" BackgroundColor="Transparent"
+      BindingContext="{x:Reference Name=MaskScrollView}"
+      Opacity="{Binding ScrollY, 
+              Converter={StaticResource ScrollViewingUnfadingOpacityConverter},
+              ConverterParameter=275
+              }"            
+      >
+      <BoxView HeightRequest="10" Color="Transparent" />
+      <Label Text="Fading Hero" FontAttributes="Bold" TextColor="Black" HorizontalOptions="Center" />
+      <Label IsVisible="False" Text="Proof of Concept" FontAttributes="Bold" TextColor="Black" HorizontalOptions="Center"
+      />
+    </StackLayout>    
+    <StackLayout Grid.Row="0" BackgroundColor="Transparent"
+      BindingContext="{x:Reference Name=MaskScrollView}"
+      Opacity="{Binding ScrollY, 
+              Converter={StaticResource ScrollViewingFadingOpacityConverter},
+              ConverterParameter=275
+              }"            
+      >
       <BoxView HeightRequest="10" Color="Transparent" />
       <Label Text="Fading Hero" FontAttributes="Bold" TextColor="White" HorizontalOptions="Center" />
       <Label Text="Proof of Concept" FontAttributes="Bold" TextColor="White" HorizontalOptions="Center"
-                  BindingContext="{x:Reference Name=MaskScrollView}"
-                    Opacity="{Binding ScrollY, 
-                  Converter={StaticResource ScrollViewingOpacityConverter},
-                  ConverterParameter=275
-                  }"         
     />
     </StackLayout>
     <ScrollView x:Name="MaskScrollView" Grid.Row="1" Grid.RowSpan="4">

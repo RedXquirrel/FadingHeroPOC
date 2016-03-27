@@ -7,14 +7,14 @@ using Xamarin.Forms;
 
 namespace POC.Converters
 {
-    public class ScrollViewingOpacityConverter : IValueConverter
+    public class ScrollViewingUnfadingOpacityConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
         {
             double input = System.Convert.ToDouble(value);
             double scale = System.Convert.ToDouble(parameter);
 
-            double result = (scale - input) / scale;
+            double result = 1 - ((scale - input) / scale);
 
             return result;
         }
