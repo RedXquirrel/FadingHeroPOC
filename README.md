@@ -1,5 +1,5 @@
 # Fading Hero POC
-Scrolling the ScrollView reduces the height of the hero pane, as well as fading some of the hero pane content. 
+Scrolling the ScrollView reduces the height of the hero pane, as well as fading out some of the hero pane content (White label text, image), and fading in some new content (Black label text). 
 
 Done in Xaml with two IValueConverters to manage opacity and masthead height changes as bound to the ScrollY value of the ScrollView
 
