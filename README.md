@@ -25,7 +25,7 @@ You will also notice that below the transparent BoxView is an image that has a t
 <Image Source="transparentscrollviewlip.png" ...
 ```
 
-The ScrollView 'lip' image itself looks like this (one of the iOS ones, in this case), the top left white area of the rectangle is the transparent area:
+The ScrollView 'lip' image itself looks like this (one of the iOS ones, in this case), the top left white area of the rectangle is the transparent area, and the blue area is the colour of the page below it:
 
 ![ScrollView Lip](https://raw.githubusercontent.com/Xamtastic/FadingHeroPOC/master/POC/POC.iOS/Resources/transparentscrollviewlip%403x.png)
 
