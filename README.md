@@ -99,6 +99,23 @@ In this way, the Opacity of the fading elements can be set to the ScrollView's S
         }
 ```
 
+You will, of course, notice that there are TWO images that reference the ScrollView 'lip' transparent image!
+
+Where you have already seen the one in the ScrollView that moves upwards and downwards, according to thge user's upwards or downwards gesture, the second one is positioned to trick the eye, whereas the first one continues to scroll upwards as the scrollview scrolls upwards, the second one becomes visible in a stationary position at that very moment that the one scrolling upwards, scrolls beneath it. Here, the eye is tricked intop thinking tha the one scrolling upwards, has stopped!
+
+Conversely, the 'stationary' lip becomes invisible when the scrollview scrolls the other way and the 'lip' image in the scrollview suddenly becomes visible:
+
+```
+      <Image 
+        BindingContext="{x:Reference Name=MaskScrollView}"
+        Grid.Row="1" 
+        Source="transparentscrollviewlip.png" Aspect="Fill" HorizontalOptions="StartAndExpand" HeightRequest="30"
+        IsVisible="{Binding ScrollY, 
+                 Converter={StaticResource MaskConverter},
+                 ConverterParameter={StaticResource HeroHeightKey}}" Opacity="1"
+             />
+```
+
 Quod erat faciendum.
 
 Of course, some might like the Hero Image to not fade out in such a case, however what is plain from the Xaml is that this sort of thing is very easy to do / change / modify - and it's also a great illustration of reverse binding.
