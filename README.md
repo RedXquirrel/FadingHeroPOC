@@ -125,7 +125,33 @@ Conversely, the 'stationary' lip becomes invisible when the scrollview scrolls t
              />
 ```
 
-Notice here that the BoxView and the Image have exactly the same Grid.Row positioning, the same HeightRequest, and the same IsVisible action upon it according to where the scrollview is positioned.
+Here, the stationary ScrollView 'lip' image can be seen masking the content that passes beneath it, and it just needs to know when it should be visible or not.
+
+This is achieved using the MaskConverter:
+
+```
+    public class MaskConverter : IValueConverter
+    {
+        public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
+        {
+            bool response = false;
+
+            double reading = System.Convert.ToDouble(value);
+            double threshhold = System.Convert.ToDouble(parameter);
+
+            if (reading >= threshhold) response = true;
+
+            return response;
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
+        {
+            throw new NotImplementedException();
+        }
+    }
+```
+
+Notice also that the BoxView and the Image have exactly the same Grid.Row positioning, the same HeightRequest, and the same IsVisible action upon it according to where the scrollview is positioned (as understood by the MaskConverter).
 
 The purpose of the BoxView is to be underneath the stationary 'lip' image, but to provide a background colour beneath the transparency of the image, that is exactly the same colour as the closed view background. Without this BoxView, you would see the items in the ScrollView scrolling upwards beneath it!
 
