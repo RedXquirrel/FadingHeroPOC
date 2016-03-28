@@ -25,6 +25,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Screenshots", "Screenshots"
 		Screenshots\Screen Shot 5.png = Screenshots\Screen Shot 5.png
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AssetOriginals", "AssetOriginals", "{C516F75B-D7BB-4AA9-9215-83E3D250F438}"
+	ProjectSection(SolutionItems) = preProject
+		AssetOriginals\oak.jpg = AssetOriginals\oak.jpg
+		AssetOriginals\TransparentScrollViewLip.png = AssetOriginals\TransparentScrollViewLip.png
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Ad-Hoc|Any CPU = Ad-Hoc|Any CPU
