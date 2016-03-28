@@ -3,7 +3,7 @@
 
 In this Proof-of-Concept, scrolling the ScrollView reduces the height of the hero pane, as well as fading out some of the hero pane content (White label text, image), and fading in some new content (Black label text). Once the hero is at it's minimum height, the scroll-pane continues to scroll under it. Note that before fading, the hero title is uppercase, but after scrolling, it is lowercase.
 
-Done in Xaml with two IValueConverters to manage opacity and hero height changes as bound to the ScrollY value of the ScrollView.
+Done in Xaml with three IValueConverters, two to manage opacity and hero height changes of various ui elements as reverse-bound to the ScrollY value of the ScrollView, and one to manage the visibility of the 'trick' Transparent ScrollView Lip (the second transparentscrollviewlip.png in the xaml) to trick the eye that the lip has stopped moving when the upwards movement of the ScrollView pane up underwards it (with the reverse happening upon the downwards scroll).
 
 ###### It all starts with a ScrollView, vis-a-vis:
 
