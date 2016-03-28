@@ -159,7 +159,9 @@ Notice also that the BoxView and the Image have exactly the same Grid.Row positi
 
 The purpose of the BoxView is to be underneath the stationary 'lip' image, but to provide a background colour beneath the transparency of the image, that is exactly the same colour as the closed view background. Without this BoxView, you would see the items in the ScrollView scrolling upwards beneath it!
 
-And that forms the basis of that illustrated!
+Of course, this backgrounding BoxView would not be necessary if a separate image was used for the 'trick lip' and which was not transparent at the top ... the BoxView is, however, there so that simply changing the background color key changes the whole color scheme without having to recreate the image with the top part in the new colour.
+
+And that forms the basis of that which was intended to be illustrated!
 
 ###### Quod erat faciendum.
 
