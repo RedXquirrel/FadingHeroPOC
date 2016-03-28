@@ -110,7 +110,7 @@ Where you have already seen the one in the ScrollView that moves upwards and dow
 Conversely, the 'stationary' lip becomes invisible when the scrollview scrolls the other way and the 'lip' image in the scrollview suddenly becomes visible:
 
 ```
-     ... low-down in the page Xaml so that whenbecoming visible, they are on top of the elements declared before them.
+     ... low-down in the page Xaml so that when becoming visible, they are on top of the elements declared before them.
      ... they are, of course, referencing Grid.Row="1", which means that they are actually rendered high in the page!
      <BoxView 
         BindingContext="{x:Reference Name=MaskScrollView}"
