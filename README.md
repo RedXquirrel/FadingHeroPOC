@@ -12,7 +12,7 @@ Done in Xaml with three IValueConverters, two to manage opacity and hero height 
       <StackLayout StackLayout.Spacing="0">
         <BoxView HeightRequest="{StaticResource HeroHeightKey}" Color="Transparent" />
         <Image Source="transparentscrollviewlip.png" Aspect="Fill" HorizontalOptions="StartAndExpand" HeightRequest="30" />
-        ...
+        ... scrolling content ...
 ```
 
 The StackLayout in the ScrollView holds the 'scrolling pane' of the ScrollView that the user gestures upwards and downwards ... but notice that the first BoxView in the 'scroll-pane' is transparent - this affords the underlying hero image to be seen, and so assures a 'space' below where the first scrolling content is seen to start. In this case, the first thing that scrolls, is the scrolling 'lip' image, which is followed by content.
